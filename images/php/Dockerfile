@@ -18,11 +18,11 @@
      && docker-php-ext-install -j$(nproc) gd
  
  RUN pecl install redis-3.1.6 \
- 	 && pecl install xdebug-2.5.0 \
- 	 && pecl install memcached-3.0.4 \
- 	 && pecl install swoole \
- 	 && pecl install pcntl \
- 	 && docker-php-ext-enable redis xdebug memcached swoole pcntl
+     && pecl install xdebug-2.5.0 \
+     && pecl install memcached-3.0.4 \
+     && pecl install swoole \
+     && pecl install pcntl \
+     && docker-php-ext-enable redis xdebug memcached swoole pcntl
     
  EXPOSE 9000
  CMD ["php-fpm"]
