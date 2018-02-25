@@ -1,5 +1,5 @@
  #get the image of php
- From php:7.2.2-fpm-alpine3.7
+ From php:7.2.2-fpm
 
  MAINTAINER wuyanwen <wuyanwen1992@gmail.com>
 
