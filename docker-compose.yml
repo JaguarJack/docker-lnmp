@@ -8,7 +8,7 @@ php72:
     - ./conf/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
     - ./log/php-fpm/:/var/log/php-fpm/:rw
 mysql:
-  image: ./images/mysql/
+  build: ./images/mysql/
   ports:
     # Allow client to access 3306
     - "3306:3306"
