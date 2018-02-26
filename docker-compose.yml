@@ -1,16 +1,24 @@
 php72:
-  build: ./images/php/
-  expose:
-    - "9009"
+  build: ./image/php/
+  ports:
+    - "9000"
   volumes:
-    - ./www/:/var/www/html/:rw
-    #- ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
-    #- ./conf/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
-    - ./log/php-fpm/:/var/log/php-fpm/:rw
+    #- ./app/src:/usr/share/nginx/html
+    # Your php.ini
+    - ./php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
+  # environment:
+    # Set your APP env variables here:
+    # - APP_KEY=
+    # - DB_HOST=
+    # - DB_DATABASE=
+    # - DB_USERNAME=
+    # - DB_PASSWORD=
   links:
-  	- mysql:mysql
+    - mysql:mysql
+
+# database
 mysql:
-  build: ./images/mysql/
+  image: mysql:latest
   ports:
     # Allow client to access 3306
     - "3309:3309"
