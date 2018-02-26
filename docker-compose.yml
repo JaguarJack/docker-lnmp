@@ -1,5 +1,5 @@
 php72:
-  build: ./image/php/
+  build: ./images/php/
   ports:
     - "9000"
   volumes:
