@@ -9,11 +9,12 @@ php72:
     - ./log/php-fpm/:/var/log/php-fpm/:rw
    links:
     - mysql:mysql
+    
 mysql:
   image: mysql:latest
   ports:
     # Allow client to access 3306
-    - "3309:3309"
+    - "3310:3310"
   volumes:
     # NOTE: your data will be stored in ./mysql
     - ./mysql:/var/lib/mysql
