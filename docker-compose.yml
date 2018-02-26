@@ -9,7 +9,6 @@ php72:
     - ./log/php-fpm/:/var/log/php-fpm/:rw
   links:
   	- mysql:mysql
-  	
 mysql:
   build: ./images/mysql/
   ports:
