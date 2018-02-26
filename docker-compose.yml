@@ -7,3 +7,13 @@ php72:
     - ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
     - ./conf/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
     - ./log/php-fpm/:/var/log/php-fpm/:rw
+mysql:
+  image: ./images/mysql/
+  ports:
+    # Allow client to access 3306
+    - "3306:3306"
+  volumes:
+    # NOTE: your data will be stored in ./mysql
+    - ./mysql:/var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=123456
