@@ -11,7 +11,7 @@ mysql:
   build: ./images/mysql/
   ports:
     # Allow client to access 3306
-    - "3306:3306"
+    - "3309:3309"
   volumes:
     # NOTE: your data will be stored in ./mysql
     - ./mysql:/var/lib/mysql
