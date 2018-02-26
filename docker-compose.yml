@@ -7,7 +7,7 @@ php72:
     #- ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
     #- ./conf/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
     - ./log/php-fpm/:/var/log/php-fpm/:rw
-    links:
+   links:
     - mysql:mysql
 mysql:
   image: mysql:latest
