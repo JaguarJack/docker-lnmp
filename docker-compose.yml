@@ -7,14 +7,14 @@ php72:
     #- ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
     #- ./conf/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
     - ./log/php-fpm/:/var/log/php-fpm/:rw
-   links:
-    - mysql:mysql
-    
+  links:
+  	- mysql:mysql
+  	
 mysql:
-  image: mysql:latest
+  build: ./images/mysql/
   ports:
     # Allow client to access 3306
-    - "3310:3310"
+    - "3309:3309"
   volumes:
     # NOTE: your data will be stored in ./mysql
     - ./mysql:/var/lib/mysql
