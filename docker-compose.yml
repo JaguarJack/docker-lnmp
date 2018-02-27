@@ -29,11 +29,11 @@ services:
     ports:
       - "9009"      
     #volumes:
-      - ./conf/php-fpm/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
-      - ./php/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
-      - ./conf/php/php.ini:/usr/local/php/etc/php.ini
-      - ./log/php-fpm/php-fpm.log:/usr/local/php/var/log/php-fpm.log
-      - ./www:/usr/share/nginx/html
+      #- ./conf/php-fpm/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
+      #- ./php/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
+      #- ./conf/php/php.ini:/usr/local/php/etc/php.ini
+      #- ./log/php-fpm/php-fpm.log:/usr/local/php/var/log/php-fpm.log
+      #- ./www:/usr/share/nginx/html
     restart: always
     container_name: php
 
