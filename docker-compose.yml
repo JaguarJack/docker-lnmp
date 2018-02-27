@@ -1,22 +1,17 @@
 version: '2'
 services:
   nginx:
-    # 依赖php服务，意味着在启动nginx之前先启动php
     depends_on:
       - php72
-      # nginx镜像的路径
     image: nginx:latest
-        # 这样使nginx容器把网站文件和目录存放到主机目录中，持久化和方便管理
     volumes:
       - ./conf/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./log/nginx/error.log:/var/log/nginx/error.log
-        # nginx意外退出时自动重启
     restart: always
         # 映射80和443端口
     ports:
       - "80:80"
       #- "443:443"
-        # 容器名称
     container_name: nginx
 
   php72:
@@ -48,6 +43,7 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
     restart: always
     container_name: mysql
+    
   # Redis
   redis:
     image: redis:latest
