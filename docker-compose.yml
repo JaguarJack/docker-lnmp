@@ -5,7 +5,7 @@ services:
       - php72
     image: nginx:latest
     volumes:
-      - ./conf/nginx:/etc/nginx/
+      - ./conf/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./log/nginx/error.log:/var/log/nginx/error.log
     restart: always
         # 映射80和443端口
