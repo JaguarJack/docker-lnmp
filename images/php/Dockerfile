@@ -43,10 +43,10 @@
      && pecl install swoole \
      && pecl install SeasLog \
      && pecl install yaf \
-     && apt-get install -y libmagickwand-dev \
+     && apt-get update && apt-get install -y libmagickwand-dev \
      && pecl install imagick-3.4.3 \
      && docker-php-ext-enable redis xdebug memcached swoole seaslog yaf imagick
  
  #install composer
  # Composer
- RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer \ 
+ #RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer \ 
