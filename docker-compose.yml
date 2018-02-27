@@ -3,7 +3,7 @@ services:
   nginx:
     # 依赖php服务，意味着在启动nginx之前先启动php
     depends_on:
-      - php
+      - php72
       # nginx镜像的路径
     image: nginx:latest
         # 这样使nginx容器把网站文件和目录存放到主机目录中，持久化和方便管理
