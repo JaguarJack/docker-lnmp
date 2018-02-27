@@ -7,7 +7,7 @@ services:
       # nginx镜像的路径
     image: nginx:latest
         # 这样使nginx容器把网站文件和目录存放到主机目录中，持久化和方便管理
-    volumes:
+    #volumes:
       #- ./nginx/www:/usr/share/nginx/html
       #- ./nginx/nginx.conf:/etc/nginx/nginx.conf
       #- ./nginx/log/error.log:/var/log/nginx/error.log
@@ -28,7 +28,7 @@ services:
     build: ./images/php/
     ports:
       - "9009"      
-    volumes:
+    #volumes:
       #- ./php/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
       #- ./php/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
       #- ./php/php.ini:/usr/local/php/etc/php.ini
