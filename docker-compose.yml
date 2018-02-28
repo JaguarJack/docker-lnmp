@@ -23,7 +23,7 @@ services:
       - "9000"      
     volumes:
       - ./conf/php-fpm/php-fpm.conf:/usr/local/php/etc/php-fpm.conf:ro
-      - ./php/www.conf:/usr/local/php/etc/php-fpm.d/www.conf:ro
+      - ./conf/php/www.conf:/usr/local/php/etc/php-fpm.d/www.conf:ro
       - ./conf/php/php.ini:/usr/local/php/etc/php.ini:ro
       - ./log/php-fpm/php-fpm.log:/usr/local/php/var/log/php-fpm.log:rw
       - ./www:/var/www/html/:rw
