@@ -44,5 +44,6 @@ then
     docker-compose up -d
 else
     echo "Only Support Centos Or Ubuntu"
+fi
 
 
