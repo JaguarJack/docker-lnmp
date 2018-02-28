@@ -1,6 +1,6 @@
 #! /bin/bash
 
-if [ file != "$(type -t yum)"]
+if [ file != "$(type -t yum)" ]
 then
     echo "start install docker-lnmp..."
     #install docker
@@ -11,7 +11,7 @@ then
         curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://aba6a4d4.m.daocloud.io
     fi
     #install docker-compose
-    if [ file != "$(type -t pip)"]; then
+    if [ file != "$(type -t pip)" ]; then
           yum install pip
           echo "install pip success"
     fi
@@ -21,7 +21,7 @@ then
        echo "install docker-compose success"
     fi
     docker-compose up -d
-elif [ file != "$(type -t apt)"]
+elif [ file != "$(type -t apt)" ]
 then
     echo "start install docker-lnmp..."
     #install docker
@@ -32,7 +32,7 @@ then
         curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://aba6a4d4.m.daocloud.io
     fi
     #install docker-compose
-    if [ file != "$(type -t pip)"]; then
+    if [ file != "$(type -t pip)" ]; then
           apt install pip
           echo "install pip success"
     fi
