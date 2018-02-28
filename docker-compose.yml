@@ -24,8 +24,7 @@ services:
     volumes:
       - ./conf/php-fpm/php-fpm.conf:/usr/local/php/etc/php-fpm.conf:ro
       - ./conf/php/www.conf:/usr/local/php/etc/php-fpm.d/www.conf:ro
-      - ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
-      - ./conf/php/conf.d:/usr/local/etc/php/conf.d/:rw
+      - ./conf/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
       - ./log/php-fpm/php-fpm.log:/usr/local/php/var/log/php-fpm.log:rw
       - ./www:/var/www/html/:rw
     links:
@@ -44,7 +43,7 @@ services:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/my.cnf:/usr/local/etc/etc/my.cnf
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD:your_password
     restart: always
     container_name: mysql
     
@@ -57,6 +56,6 @@ services:
       - ./conf/redis/redis.conf:/usr/local/etc/redis/redis.conf
       - ./redis/data:/data
     environment:
-     - REDIS_PASSWORD=123456
+      REDIS_PASSWORD:your_password
     container_name: redis
 

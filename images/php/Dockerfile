@@ -38,15 +38,21 @@
  #Install php extensions by using pecl
  
  RUN pecl install redis-3.1.6 \
+ 	 && docker-php-ext-enable redis \
      && pecl install xdebug-2.6.0 \
+     && docker-php-ext-enable xdebug \
      && apt-get install -y libmemcached-dev zlib1g-dev \
      && pecl install memcached-3.0.4 \
+     && docker-php-ext-enable memcached \
      && pecl install swoole \
+     && docker-php-ext-enable swoole \
      && pecl install SeasLog \
+     && docker-php-ext-enable seaslog \
      && pecl install yaf \
+     && docker-php-ext-enable yaf \
      && apt-get update && apt-get install -y libmagickwand-dev \
      && pecl install imagick-3.4.3 \
-     && docker-php-ext-enable redis xdebug memcached swoole seaslog yaf imagick
+     && docker-php-ext-enable imagick
  
  #install composer
  # Composer
