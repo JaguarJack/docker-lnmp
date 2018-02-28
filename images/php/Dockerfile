@@ -32,7 +32,8 @@
      && docker-php-ext-install pdo_mysql \
      && docker-php-ext-install sysvmsg \
      && docker-php-ext-install sysvsem \
-     && docker-php-ext-install sysvshm
+     && docker-php-ext-install sysvshm \
+     && docker-php-ext-install mysqli
      
  #Install php extensions by using pecl
  
