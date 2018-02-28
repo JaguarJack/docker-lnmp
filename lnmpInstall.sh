@@ -20,6 +20,7 @@ then
        pip install docker-compose
        echo "install docker-compose success"
     fi
+    systemctl start docker
     docker-compose up -d
 elif [ file == "$(type -t apt-get)" ]
 then
