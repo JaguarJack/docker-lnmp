@@ -1,6 +1,6 @@
 #! /bin/bash
 
-if [ file != "$(type -t yum)" ]
+if [ file == "$(type -t yum)" ]
 then
     echo "start install docker-lnmp..."
     #install docker
@@ -21,7 +21,7 @@ then
        echo "install docker-compose success"
     fi
     docker-compose up -d
-elif [ file != "$(type -t apt)" ]
+elif [ file == "$(type -t apt-get)" ]
 then
     echo "start install docker-lnmp..."
     #install docker
@@ -33,12 +33,12 @@ then
     fi
     #install docker-compose
     if [ file != "$(type -t pip)" ]; then
-          apt install pip
+          apt-get install pip
           echo "install pip success"
     fi
     if [ file != "$(type -t docker-compose)" ]; then
        #install docker-compose by pip
-       apt install docker-compose
+       apt-get install docker-compose
        echo "install docker-compose success"
     fi
     docker-compose up -d
