@@ -43,7 +43,7 @@ services:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/my.cnf:/usr/local/etc/etc/my.cnf
     environment:
-      MYSQL_ROOT_PASSWORD:your_password
+      - MYSQL_ROOT_PASSWORD:your_password
     restart: always
     container_name: mysql
     
@@ -56,6 +56,6 @@ services:
       - ./conf/redis/redis.conf:/usr/local/etc/redis/redis.conf
       - ./redis/data:/data
     environment:
-      REDIS_PASSWORD:your_password
+      - REDIS_PASSWORD:your_password
     container_name: redis
 
