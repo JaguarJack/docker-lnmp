@@ -52,11 +52,10 @@ services:
   # Redis
   redis:
     image: redis:latest
+    command: redis-server --requirepass yourPassword
     ports:
       - 6379:6379
     volumes:
       - ./redis/data:/data
-    environment:
-      - REDIS_PASSWORD=your_password
     container_name: redis
 
